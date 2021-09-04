@@ -1,17 +1,18 @@
 // Approach ahead - Mutleyx
 :Approach=0 :range=0 od=0 oa=0
-a=:Approach ifa!=oa thenoa=a :range=a end goto3+a
-d=:RangeAhead ifd!=500thengoto6end
+a=:Approach if a!=oa then oa=a :range=a end goto3+a
+d=:RangeAhead if d!=500 then goto6 end
 :FcuForward=0 :FcuBackward=0 goto3
-ifd>15 and d<20thengoto9end
+if d>15 and d<20 then goto9 end
 done=0 cd=17.5-d dx=od-cd od=cd adj=-(cd-4.5*dx) goto15
 
 :FcuForward=0 :FcuBackward=0
-done++ ifdone>10then:Approach=0end
+done++ if done>10 then :Approach=0 end
 goto2*:Approach+2
 
 
 
-ifadj>d thenadj=d end :FcuForward=0 :FcuBackward=0
-ifadj<0then:FcuBackward=-adj*0.5else:FcuForward=adj*0.25end
-if:Approach thengoto4elsegoto9end
+if adj>d then adj=d end :FcuForward=0 :FcuBackward=0
+if adj<0 then :FcuBackward=-adj*0.5 else :FcuForward=adj*0.25 end
+if :Approach then goto4 else goto9 end
+// ------------- this comment is 70 characters long --------------- //
